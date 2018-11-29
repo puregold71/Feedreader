@@ -91,7 +91,7 @@ $(function() {
             });
         });
         //check that it has at least one entry
-        it('has at least one entry', function(done) {
+        it('have at least one entry', function(done) {
             const feed = document.querySelector(".feed")
             //make sure the feed div contains at least one entry
             const entries = feed.getElementsByClassName("entry")
