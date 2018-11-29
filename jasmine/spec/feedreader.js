@@ -120,7 +120,8 @@ $(function() {
             const nextFeed = document.querySelector('.feed').innerHTML
             const entries = document.getElementsByClassName("entry")
             loadFeed(1, function() {
-                //first and second feeds / entries should not be the same
+                //feed container should be updated with a new feed.
+                //first and second feed should be different
                 expect(firstFeed).not.toEqual(nextFeed)
                 expect(entries[1].innerHTML).not.toEqual(entries[0]
                     .innerHTML);
