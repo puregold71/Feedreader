@@ -1,5 +1,4 @@
 # Feedreader
-<<<<<<< HEAD
 A Udacity blog with multiple feeds.
 
 ## Object of Project
