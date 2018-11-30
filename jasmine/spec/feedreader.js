@@ -18,10 +18,7 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+
 
          //test that loops through the allFeeds array and makes sure there is a url defined and is not empty for each object in the array
         it('URLs are defined and not empty', function() {
@@ -30,10 +27,7 @@ $(function() {
                 expect(feed['url']).toBeDefined();
             }
         });
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
+
         //test that loops through the allFeeds array and makes sure there is a name defined and is not empty for each object in the array
         it('names are defined and not empty', function() {
             for (let feed of allFeeds) {
@@ -46,11 +40,8 @@ $(function() {
     describe('The menu', function() {
       //get the body element
       const body = document.querySelector('body')
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+        //test that the menu is hidden by default
+
         //the css for body shows class menu-hidden
         it('is hidden by default', function() {
             //get the body element
@@ -96,7 +87,7 @@ $(function() {
             expect(entries.length).toBeGreaterThan(0);
         });
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+  
     describe('New Feed Selection', function() {
         /* test ensures that when a new feed is loaded that the content
         actually changes

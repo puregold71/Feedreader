@@ -28,12 +28,6 @@ Jasmine
 
 
 
-
 ## Author
 
 **Julie Singh**
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1b6ccfe9d00b857ebef088eaa0bca2d18b35661e
