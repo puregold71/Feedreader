@@ -65,7 +65,7 @@ $(function() {
             expect(body.classList).toContain('menu-hidden')
         });
     });
-    /* TODO: Write a new test suite named "Initial Entries" */
+
     describe('Initial Entries', function() {
         /* test that after the loadFeed function runs there is at least
         one .entry in the feed container
@@ -87,19 +87,24 @@ $(function() {
             expect(entries.length).toBeGreaterThan(0);
         });
     });
-  
+
     describe('New Feed Selection', function() {
         /* test ensures that when a new feed is loaded that the content
         actually changes
          */
-       //get contents of the feed container before the loadFeed
-       const firstFeed = document.querySelector('.feed').innerHTML;
+
+       let firstFeed;
+       let nextFeed;
 
         beforeEach(function(done) {
             //load first feed
             loadFeed(0, function() {
+              //get content of feed container
+              firstFeed = document.querySelector('.feed').innerHTML;
                 //load next feed
                 loadFeed(1, function() {
+                  //get content of feed container
+                  nextFeed = document.querySelector('.feed').innerHTML;
                     //signals function is done and testing can continue
                     done();
                 });
@@ -108,15 +113,14 @@ $(function() {
 
 
         it('content changes when new feed is loaded', function() {
-            //get contents of the feed container after the loadFeed
-            const nextFeed = document.querySelector('.feed').innerHTML
             //get the first two .entry feeds
             const entries = document.getElementsByClassName("entry")
-                //feed container should be updated with a new feed.
-                //first and second feed should be different
+            //entries should not be equal
+            expect(entries[1].innerHTML).not.toEqual(entries[0]
+                .innerHTML);
+            //contents of first and next feed containers should not be equal
                 expect(firstFeed).not.toEqual(nextFeed)
-                expect(entries[1].innerHTML).not.toEqual(entries[0]
-                    .innerHTML);
+
         });
     });
 }());
